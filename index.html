@@ -10,6 +10,19 @@
       patientId: 'SMART-smart-613876'
           });
       
+      function getPatientName(pt) {
+            if (pt.name) {
+                var names = pt.name.map(function(name) {
+                    return name.given.join(" ") + " " + name.family.join(" ");
+                });
+                return names.join(" / ");
+            } else {
+                return "anonymous";
+            }
+
+      function displayPatient (pt) {
+            document.getElementById('name').innerHTML = getPatientName(pt);
+        }
       smart.patient.api.search({type: 'Condition'});
       FHIR.oauth2.ready(function(smart){
             smart.patient.read().then(function(pt) {
