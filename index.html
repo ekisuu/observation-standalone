@@ -3,6 +3,12 @@
 <html>
   <head>
     <script src="https://rawgithub.com/smart-on-fhir/client-js/master/dist/fhir-client.js"></script>
+    <h1>Observation Results for <span id="name"></h1>
+    <script>
+        var smart = FHIR.client({
+      serviceUrl: 'https://sb-fhir-dstu2.smarthealthit.org/api/smartdstu2/data',
+      patientId: 'SMART-1137192'
+    </script>
   </head>
    </body>
 </html>
